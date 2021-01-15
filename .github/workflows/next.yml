@@ -56,7 +56,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ secrets.PACKAGE_DEPLOY_USER }}
+          username: ${{ github.actor }}
           password: ${{ secrets.PACKAGE_DEPLOY_TOKEN }}
       - name: Build kas image
         uses: docker/build-push-action@v2
